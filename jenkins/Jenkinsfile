@@ -5,9 +5,6 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-   stage('SCM') {
-    checkout scm
-      }
       stage('SonarQube Analysis') {
     def mvn = tool 'Default Maven';
     withSonarQubeEnv() {
